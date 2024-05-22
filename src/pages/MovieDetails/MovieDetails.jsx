@@ -8,7 +8,7 @@ export const MovieDetails = () => {
     console.log(id);
 
     useEffect(() => {
-        if (!id) return;
+
         movieDetails(id)
             .then(response => setDetails(response))
             .catch(error => console.error(error));
@@ -16,7 +16,8 @@ export const MovieDetails = () => {
     }, [id]); 
     
     const { poster_path, title, name, vote_average, overview, genres } = details;
-    console.log(details)
+    console.log(details);
+    console.log(genres)
 
 
     //genres funkcja - coś jest nie tak - zakomentowanie genres.map powoduje załadowanie strony, po odkomentowaniu także wszystko działa. 
@@ -32,7 +33,7 @@ export const MovieDetails = () => {
                 <li>Overview: {overview}</li>
                 <li>Genres:
                     <ul>
-                        {genres.map(( genre ) => (
+                        {genres.map( genre  => (
                             <li key={genre.id}>{genre.name}</li>
 
                         )
