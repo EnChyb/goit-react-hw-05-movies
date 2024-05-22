@@ -1,5 +1,7 @@
 // fef97f82d8d49085ce239f9b3e3e2fad
 
+export const placeholderImg = "https://picsum.photos/200/300";
+
 
 
 const options = {

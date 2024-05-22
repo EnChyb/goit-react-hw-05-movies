@@ -1,11 +1,10 @@
-import { trendingAll, posterURL } from "components/API";
+import { trendingAll, posterURL, placeholderImg } from "components/API";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 export const TrendingToday = () => {
 
     const [trendingMovies, setTrendingMovies] = useState([]);
-    const placeholderImg = "https://picsum.photos/200/300"
 
     useEffect(() => {
 

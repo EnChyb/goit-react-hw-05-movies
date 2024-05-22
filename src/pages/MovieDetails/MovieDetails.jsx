@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { movieDetails } from "components/API";
+import { movieDetails, posterURL, placeholderImg } from "components/API";
 
 export const MovieDetails = () => {
     const { id } = useParams();
@@ -19,11 +19,13 @@ export const MovieDetails = () => {
     console.log(details)
 
 
-    //genres funkcja jak wyciągnąć + jak wyświetlic kartę MovieDetails
+    //genres funkcja - coś jest nie tak - zakomentowanie genres.map powoduje załadowanie strony, po odkomentowaniu także wszystko działa. 
 
     return (
         <div>
-            <img src={poster_path} alt={`Poster of film: ${title || name}`} />
+            <img
+                src={poster_path ? `${posterURL}${poster_path}` : placeholderImg}
+                alt={`Poster of film: ${title || name}`} />
             <ul>
                 <li>Title: {title || name}</li>
                 <li>Score: {vote_average}</li>
@@ -35,13 +37,9 @@ export const MovieDetails = () => {
 
                         )
                 )}
-
                     </ul>
-
                 </li>
-
             </ul>
-
         </div>
     )
 
