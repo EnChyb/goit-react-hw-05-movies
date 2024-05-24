@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { searchMovie } from "components/API";
-import { Form, useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import { SearchInput } from "components/SearchInput/SearchInput";
 import { SearchResults } from "components/SearchResults/SearchResults";
 import { LoadMore } from "components/LoadMore/LoadMore";
