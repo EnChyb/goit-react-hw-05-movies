@@ -7,7 +7,6 @@ export const TrendingToday = () => {
     const [trendingMovies, setTrendingMovies] = useState([]);
 
     useEffect(() => {
-
         trendingAll()
             .then(response => setTrendingMovies(response))
             .catch(err => console.error('Error with fetching trending movies:' + err));
