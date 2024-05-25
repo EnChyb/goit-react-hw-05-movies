@@ -1,13 +1,12 @@
-
-export const SearchInput = ({value, onSubmit}) => {
+import css from "./SearchInput.module.css"
+export const SearchInput = ({ onSubmit}) => {
     return (
-            <form onSubmit={onSubmit}>
-                <input
+        <form className={css.form} onSubmit={onSubmit}>
+                <input className = {css.input}
                     type="text"
-                value={value}
-                name="query"
+                    name="query"
                 />
-                <button type="submit">Search</button>
+            <button className={css.button }type="submit">Search</button>
             </form> 
     ) 
 

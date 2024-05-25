@@ -1,8 +1,9 @@
 import { useParams } from "react-router-dom"
 import { movieCredits, placeholderImg, posterURL } from "components/API"
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
+import css from "./Cast.module.css"
 
-export const Cast = () => {
+const Cast = () => {
     const { movieId } = useParams();
 console.log(movieId)
     const [cast, setCast] = useState([]);
@@ -19,12 +20,12 @@ console.log(movieId)
     return (
         <>
             {cast.length>0 ? (
-            <ul>
+            <ul className={css.cast}>
                 {cast.map(item => (
                     <li key={item.id}>
-                        <img src={item.profile_path ? `${posterURL}${item.profile_path}` : placeholderImg} alt='' />
-                        <h3>{item.name}</h3>
-                        <p>{item.character}</p>
+                        <img className={css.photo} src={item.profile_path ? `${posterURL}${item.profile_path}` : placeholderImg} alt='' width="150" />
+                        <h3 className={css.title}>{item.name}</h3>
+                        <p className={css.character}>{item.character}</p>
                     </li>
 
                 ))}
@@ -36,8 +37,6 @@ console.log(movieId)
         </>
 
     )
-
-    
-
-
 }
+
+export default Cast; 

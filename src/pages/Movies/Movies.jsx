@@ -4,9 +4,9 @@ import { useSearchParams } from "react-router-dom";
 import { SearchInput } from "components/SearchInput/SearchInput";
 import { SearchResults } from "components/SearchResults/SearchResults";
 import { LoadMore } from "components/LoadMore/LoadMore";
-import { Loader } from "components/Loader/Loader";
+//import { Loader } from "components/Loader/Loader";
 
-export const Movies = () => {
+const Movies = () => {
 
     const [searchParams, setSearchParams] = useSearchParams();
     const query = searchParams.get("query")
@@ -16,13 +16,13 @@ export const Movies = () => {
     const [page, setPage] = useState(1);
     const [disabledButton, setDisabledButton] = useState(true);
     const [totalPage, setTotalPage] = useState(0);
-    const [isLoading, setIsLoading] = useState(false);
-
+    // const [isLoading, setIsLoading] = useState(false);
+    
 
     useEffect(() => {
 
         if (!query) return;
-        setIsLoading(true);
+        //setIsLoading(true);
 
         searchMovie(query, page)
             .then(data => {
@@ -42,13 +42,12 @@ export const Movies = () => {
             })
             .catch(error => console.error(error));
         
-        setTimeout(() => { setIsLoading(false) }, 1000);
+        //setTimeout(() => { setIsLoading(false) }, 1000);
 
     }, [query, page]
     );
 
     
-
     //load more images
         const loadMore = () => {
         setPage(page => page + 1);
@@ -58,23 +57,18 @@ export const Movies = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         const form = e.currentTarget;
-        console.log(form);
-        setSearchParams({ query:form.elements.query.value });
+        setSearchParams({ query: form.elements.query.value });
+        setPage(1);
         form.reset()
     }
 
-
-
     return (
         <>
-            <SearchInput value={query} onSubmit={handleSubmit} />
-            {isLoading? <Loader/> : <SearchResults queryResults={queryResults} />}
+            <SearchInput onSubmit={handleSubmit} />
+            {<SearchResults queryResults={queryResults} />}
             {totalPage !== 0 && <LoadMore disabled={disabledButton} onClick={loadMore} />}
-
         </>
-
-
     )
-
-
 }
+
+export default Movies;

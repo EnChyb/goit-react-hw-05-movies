@@ -1,0 +1,7 @@
+.reviews {
+    list-style: none;
+}
+
+.reviews p {
+    font-style: italic;
+}

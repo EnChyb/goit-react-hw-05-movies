@@ -1,0 +1,63 @@
+.results {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    list-style: none;
+
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.result {
+    background-color: #f8f8f8;
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: background-color 0.3s ease;
+
+}
+
+.result:hover {
+    background-color: #e0e0e0;
+    /* Zmień kolor tła po najechaniu myszką */
+    animation: pulse 1s infinite alternate;
+
+}
+
+
+.link {
+    text-decoration: none;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+p {
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 8px;
+}

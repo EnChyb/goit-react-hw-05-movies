@@ -1,6 +1,7 @@
 import { trendingAll, posterURL, placeholderImg } from "components/API";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import css from "./TrendingToday.module.css"
 
 export const TrendingToday = () => {
 
@@ -14,13 +15,15 @@ export const TrendingToday = () => {
     );
 
     return (
-        <ul>
+        <ul className={css.list}>
             {trendingMovies.map(({id, poster_path, title, name}) => (
-                <li key={id}>
-                    <Link to={`/movies/${id}`}>
+                <li className={css.trending}
+                    key={id}>
+                    <Link className={css.link } to={`/movies/${id}`}>
                         <img
                             src={poster_path ? `${posterURL}${poster_path}` : placeholderImg}
-                            alt={`Poster of film ${title || name}`} />
+                            alt={`Poster of film ${title || name}`}
+                        width="200"/>
                         <p>{ title || name}</p>
                     </Link>
                 </li>

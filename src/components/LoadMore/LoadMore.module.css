@@ -1,0 +1,17 @@
+.load {
+    background-color: #333;
+    width: 80px;
+    margin-left: 40px;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 3px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.load:hover {
+    background-color: #D2B48C;
+
+}

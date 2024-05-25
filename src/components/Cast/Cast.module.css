@@ -1,0 +1,27 @@
+.cast {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    list-style: none;
+
+}
+
+.photo {
+    max-width: 100%;
+    height: auto;
+}
+
+.title {
+    font-size: 18px;
+    margin: 10px 0;
+    max-width: 150px;
+}
+
+.character {
+    font-size: 14px;
+    color: #555;
+}

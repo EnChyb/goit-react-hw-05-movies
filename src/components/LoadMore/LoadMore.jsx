@@ -1,10 +1,11 @@
 import PropTypes from 'prop-types';
+import css from "./LoadMore.module.css"
 
 export const LoadMore = ({ disabled, onClick }) => {
 
     return (
         <>
-            <button  disabled={disabled} onClick={onClick}>{disabled? "End of results" : "Load more" }</button>
+            <button className={css.load}  disabled={disabled} onClick={onClick}>{disabled? "End of results" : "Load more" }</button>
         </>
     )
 

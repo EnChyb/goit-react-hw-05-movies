@@ -13,14 +13,21 @@ const options = {
 
 // fetching function
 const fetchData = async (url) => {
-  try {
+  // try {
     const response = await fetch(url, options);
+    console.log(response)
+    // if (response.ok===false) return;
     const responseJSON = await response.json()
+    console.log(responseJSON)
+    if (!response.ok) {
+      throw new Error("Failed to fetch data");
+    }
     return responseJSON;
-  } catch (error) {
-        console.error('Error with fetching:' +error)
   }
-}
+  // } catch (error) {
+  //       console.error('Error with fetching:' +error)
+  // }
+//}
 
 // trending-all 
 export const trendingAll = async () => {
